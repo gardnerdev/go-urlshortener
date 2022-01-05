@@ -15,7 +15,7 @@ func main() {
 		"/luna":    "https://www.youtube.com/watch?v=KqpGMoYZMhY",
 	}
 
-	mapHandler := urlshort.MapHanlder(pathsToUrls, mux)
+	mapHandler := urlshort.MapHandler(pathsToUrls, mux)
 
 	fmt.Println("Starting the server on: 8080")
 	http.ListenAndServe(":8080", mapHandler)
