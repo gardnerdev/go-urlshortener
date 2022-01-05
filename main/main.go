@@ -20,3 +20,13 @@ func main() {
 	fmt.Println("Starting the server on: 8080")
 	http.ListenAndServe(":8080", mapHandler)
 }
+
+func defaultMux() *http.ServeMux {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", gm)
+	return mux
+}
+
+func gm(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "GM ;)")
+}
