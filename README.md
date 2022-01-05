@@ -9,3 +9,9 @@ For instance, if we have a redirect setup for **/bitcoin** to **youtube recordin
 The next cryptocurrency is **/luna**, which will redirect us to official **Terra blockchain** youtube recording.
 
 To complete this task I will need to implement the stubbed out methods in handler.go. 
+
+
+## Usage
+```
+go run main.go
+```
