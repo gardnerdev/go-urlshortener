@@ -14,6 +14,11 @@ func MapHandler(pathsToUrls map[string]string, fallback http.Handler) http.Handl
 	return func(w http.ResponseWriter, r *http.Request) {
 		// if we can match the path...
 		// redirect to it
+		path := r.URL.Path
+		if dest, ok := pathsToUrls[path]; ok { //ok is saying, if find key it will be True
+			http.Redirect(w, r, dest, http.StatusFound)
+			return
+		}
 		fallback.ServeHTTP(w, r)
 	}
 }
